@@ -1,0 +1,38 @@
+SECTIONS
+{
+	. = 0;
+
+	.text :
+	{
+		entry_point = .;
+		init.o(INIT)
+		*(.text)
+	}
+
+	.rodata :
+	{
+		*(.rodata)
+	}
+
+	.data :
+	{
+		*(.data)
+	}
+
+	.bss :
+	{
+		*(.bss)
+	}
+
+	.discard :
+	{
+		libg.a(*)
+		libnosys.a(*)
+	}
+	Image$$ER_ZI$$ZI$$Base = LOADADDR(.bss);
+	Image$$ER_ZI$$ZI$$Length = SIZEOF(.bss);
+	size_of_firmware_image = LOADADDR(.bss);
+
+	ENTRY(entry_point)
+	_start = entry_point;
+}
