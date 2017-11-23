@@ -52,6 +52,8 @@
 #define COPY_BUF(BANK)		_COPY_BUF(REAL_BANK(BANK))
 #define FTL_BUF(BANK)       (FTL_BUF_ADDR + ((BANK) * BYTES_PER_PAGE))
 
+// [TODO] calculate remaining DRAM size 
+
 ///////////////////////////////
 // DRAM segmentation
 ///////////////////////////////
