@@ -1,13 +1,14 @@
-What this project for
+# What this project for
 
-1. this project is for sector level mapping FTL
+## 1. this project is for sector level mapping FTL
 
-2. modified ...
+## 2. modified ...
 	modified read / write operation to sector level
 	
 
-How to build and run Jasmine
+# How to build and run Jasmine
 
+## 1. Compile the firmware
 1.1 Compile the firmware using GNU tools
 
 	Your PC should have gcc installed. Jasmine has been built and tested with
@@ -39,13 +40,13 @@ How to build and run Jasmine
 	which is a binary image of the firmware.
 	You can install the firmware image onto Jasmine board using the installer.
 
-2. Compile the installer
+## 2. Compile the installer
 
 	installer\installer.sln is a Visual C++ 2005 Solution file.
 	It has also been tested with a free edition of Visual C++ 2010 Express.
 	Double click installer.sln and build it.
 
-3. Install the firmware
+## 3. Install the firmware
 
 	Set the jumper J2 to factory mode position and turn on the power to Jasmine board.
 	You can hot-plug the Jasmine board into your PC's SATA socket, if your motherboard
@@ -110,7 +111,7 @@ How to build and run Jasmine
 	At the final step, firmware.bin and the scan list will be written to block #0 of NAND flash.
 	Turn off Jasmine board when installation is complete.
 
-4. Run
+## 4. Run
 
 	Set the jumper J2 to normal mode position and unplug SATA cable.
 	Turn on the power to Jasmine board. Jasmine will be busy doing internal low level format.
