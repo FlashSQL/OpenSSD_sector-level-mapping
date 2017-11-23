@@ -367,7 +367,7 @@ void ftl_read(UINT32 const lba, UINT32 const num_sectors)
     {
         /*
          * [TODO] read requested sectors. (unit: sector)
-	    *	          0.   assign new variable [@vsn] [@lsn] 
+	 *	    0.   assign new variable [@vsn] [@lsn] 
          *          1.   check if corresponding sector is included in merge buffer 
          *          2-1. if it is in merge buffer read corresponding buffer region
          *          2-1. get_vpn(lpn), access corresponding vpn and read data requested
@@ -445,7 +445,7 @@ void ftl_write(UINT32 const lba, UINT32 const num_sectors)
          *       check if requested page is included in merge buffer   
          *       (yes) update merge buffer    
          *       (no)  add sector in merge buffer and update psn(physical sector no.)
-		 *		 if merge buffer is full then flush merge buffer and write nand page
+	 *	 if merge buffer is full then flush merge buffer and write nand page
          */
 		
         bank = get_lsn_bank(lsn);
@@ -727,9 +727,7 @@ static void get_merge_buf(UINT32 const bank, UINT32 const lsn)
     UINT32 mb_offset = get_merge_buf_offset(bank, lsn);
     UINT32 offset = lsn % SECTORS_PER_PAGE;
 /*
-    [TODO]: check which region of read buffer to fill in.
-*/
-/*
+    	[TODO]: check which region of read buffer to fill in.
    	[MODIFIED]: return merge buffer to SATA Read buffer
 */
 	mem_copy(RD_BUF_PTR(g_ftl_read_buf_id) + offset * BYTES_PER_SECTOR , MERGE_BUF_PTR(bank)+mb_offset, BYTES_PER_SECTOR);
